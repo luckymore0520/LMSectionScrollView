@@ -13,6 +13,9 @@
 		480673B31C252E2200D3F38F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 480673B11C252E2200D3F38F /* Main.storyboard */; };
 		480673B51C252E2200D3F38F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 480673B41C252E2200D3F38F /* Assets.xcassets */; };
 		480673B81C252E2200D3F38F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 480673B61C252E2200D3F38F /* LaunchScreen.storyboard */; };
+		480673C61C252E4D00D3F38F /* LMSectionScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 480673C51C252E4D00D3F38F /* LMSectionScrollView.m */; };
+		480673CF1C25323900D3F38F /* UILabel+LMSectionScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 480673CE1C25323900D3F38F /* UILabel+LMSectionScrollView.m */; };
+		480673D21C25325000D3F38F /* UIView+LMSectionScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 480673D11C25325000D3F38F /* UIView+LMSectionScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,12 @@
 		480673B41C252E2200D3F38F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		480673B71C252E2200D3F38F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		480673B91C252E2200D3F38F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		480673C41C252E4D00D3F38F /* LMSectionScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LMSectionScrollView.h; path = Class/LMSectionScrollView.h; sourceTree = "<group>"; };
+		480673C51C252E4D00D3F38F /* LMSectionScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LMSectionScrollView.m; path = Class/LMSectionScrollView.m; sourceTree = "<group>"; };
+		480673CD1C25323900D3F38F /* UILabel+LMSectionScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UILabel+LMSectionScrollView.h"; path = "Class/UILabel+LMSectionScrollView.h"; sourceTree = "<group>"; };
+		480673CE1C25323900D3F38F /* UILabel+LMSectionScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UILabel+LMSectionScrollView.m"; path = "Class/UILabel+LMSectionScrollView.m"; sourceTree = "<group>"; };
+		480673D01C25325000D3F38F /* UIView+LMSectionScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+LMSectionScrollView.h"; path = "Class/UIView+LMSectionScrollView.h"; sourceTree = "<group>"; };
+		480673D11C25325000D3F38F /* UIView+LMSectionScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+LMSectionScrollView.m"; path = "Class/UIView+LMSectionScrollView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +67,7 @@
 		480673A71C252E2200D3F38F /* LMSectionScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				480673C01C252E2E00D3F38F /* Class */,
 				480673AB1C252E2200D3F38F /* AppDelegate.h */,
 				480673AC1C252E2200D3F38F /* AppDelegate.m */,
 				480673AE1C252E2200D3F38F /* ViewController.h */,
@@ -77,6 +87,19 @@
 				480673A91C252E2200D3F38F /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		480673C01C252E2E00D3F38F /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				480673D01C25325000D3F38F /* UIView+LMSectionScrollView.h */,
+				480673D11C25325000D3F38F /* UIView+LMSectionScrollView.m */,
+				480673C41C252E4D00D3F38F /* LMSectionScrollView.h */,
+				480673C51C252E4D00D3F38F /* LMSectionScrollView.m */,
+				480673CD1C25323900D3F38F /* UILabel+LMSectionScrollView.h */,
+				480673CE1C25323900D3F38F /* UILabel+LMSectionScrollView.m */,
+			);
+			name = Class;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,8 +173,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				480673B01C252E2200D3F38F /* ViewController.m in Sources */,
+				480673D21C25325000D3F38F /* UIView+LMSectionScrollView.m in Sources */,
 				480673AD1C252E2200D3F38F /* AppDelegate.m in Sources */,
+				480673C61C252E4D00D3F38F /* LMSectionScrollView.m in Sources */,
 				480673AA1C252E2200D3F38F /* main.m in Sources */,
+				480673CF1C25323900D3F38F /* UILabel+LMSectionScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
