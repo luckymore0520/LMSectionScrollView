@@ -13,4 +13,5 @@
 - (CGFloat)height;
 - (CGFloat)right;
 - (CGFloat)left;
+- (void)setWidth:(CGFloat)width;
 @end

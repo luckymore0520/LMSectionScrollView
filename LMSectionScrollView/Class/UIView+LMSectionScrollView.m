@@ -24,4 +24,10 @@
 - (CGFloat)right {
     return self.frame.origin.x + self.width;
 }
+
+- (void)setWidth:(CGFloat)width {
+    CGRect frame = self.frame;
+    frame.size.width = width;
+    self.frame = frame;
+}
 @end

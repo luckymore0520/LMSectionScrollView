@@ -78,6 +78,8 @@ const CGFloat kSectionButtonPadding = 0;
     [self addSubview:_sectionScrollView];
 }
 
+
+#pragma mark Public Function
 - (void)buildViewWithNibNames:(NSArray *)viewNibNames sectionNameArray:(NSArray *)nameArray {
     NSMutableArray *viewsArray = [[NSMutableArray alloc] initWithCapacity:viewNibNames.count];
     for (NSString *name in viewNibNames) {
@@ -104,6 +106,32 @@ const CGFloat kSectionButtonPadding = 0;
     [self layoutSubviews];
 }
 
+- (void)setSectionViewWidth:(CGFloat)sectionViewWidth {
+    _sectionViewWidth = sectionViewWidth;
+    self.sectionScrollView.width = _sectionViewWidth;
+}
+
+- (void)setSectionSelectedColor:(UIColor *)sectionSelectedColor {
+    _sectionSelectedColor = sectionSelectedColor;
+    for (UIButton *button in self.sectionButtonArray) {
+        [button setTitleColor:_sectionSelectedColor forState:UIControlStateSelected];
+    }
+}
+
+- (void)setSectionUnselectedColor:(UIColor *)sectionUnselectedColor {
+    _sectionUnselectedColor = sectionUnselectedColor;
+    for (UIButton *button in self.sectionButtonArray) {
+        [button setTitleColor:_sectionUnselectedColor forState:UIControlStateNormal];
+    }
+}
+
+- (void)setSelectedIndex:(NSUInteger)selectedIndex {
+    [self setSelectedIndex:selectedIndex animated:NO];
+}
+
+
+
+#pragma mark - Private Function
 - (UIButton *)createButtonWithName:(NSString *)buttonName {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setTitle:buttonName forState:UIControlStateNormal];
@@ -114,11 +142,11 @@ const CGFloat kSectionButtonPadding = 0;
     return button;
 }
 
-- (void)setSelectedIndex:(NSUInteger)selectedIndex {
-    [self setSelectedIndex:selectedIndex animated:NO];
-}
 
 - (void)setSelectedIndex:(NSUInteger)selectedIndex animated:(BOOL)animated {
+    if (_selectedIndex >= self.sectionButtonArray.count) {
+        return;
+    }
     _selectedIndex = selectedIndex;
     for (UIButton *button in self.sectionButtonArray) {
         [button setSelected:NO];
@@ -145,7 +173,6 @@ const CGFloat kSectionButtonPadding = 0;
     if (targetSelectedIndex == self.selectedIndex && self.selectedIndex + 1 < self.sectionButtonArray.count) {
         //drag right
         targetSelectedButton = self.sectionButtonArray[self.selectedIndex + 1];
-        NSLog(@"drag right");
         CGFloat contentOffsetXOffset = contentOffsetX - scrollView.width * self.selectedIndex;
         CGFloat percent = contentOffsetXOffset / scrollView.width;
         CGFloat totalOffset = targetSelectedButton.center.x - selectedButton.center.x;
@@ -153,7 +180,6 @@ const CGFloat kSectionButtonPadding = 0;
     } else if (self.selectedIndex > 0){
         //drag left
         targetSelectedButton = self.sectionButtonArray[self.selectedIndex - 1];
-        NSLog(@"drag left");
         CGFloat contentOffsetXOffset = contentOffsetX - scrollView.width * self.selectedIndex;
         CGFloat percent = contentOffsetXOffset / scrollView.width;
         CGFloat totalOffset = targetSelectedButton.center.x - selectedButton.center.x;
