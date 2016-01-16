@@ -2,6 +2,10 @@
 A ScrollView with custom page control
 
 
+## Sreenshot
+![Demo GIF Animation](http://recordit.co/LYEqQuqOaO.gif
+ "Demo GIF Animation")
+ 
 ## Usage
 
 #### Init the scrollView with custom views
@@ -12,9 +16,6 @@ LMSectionScrollView *sectionScrollView = [[LMSectionScrollView alloc] initWithFr
 [self.view addSubview: sectionScrollView];
 ```
 
-## Sreenshot
-![Demo GIF Animation](http://recordit.co/LYEqQuqOaO.gif
- "Demo GIF Animation")
 
 #### Init the scrollView with bundleNames 
 ```Objective-C 
